@@ -6,21 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up(): void
+    public function up()
     {
-        if (!Schema::hasColumn('users', 'email_verified_at')) {
-            Schema::table('users', function (Blueprint $table) {
-                $table->timestamp('email_verified_at')->nullable();
-            });
-        }
+        Schema::table('users', function (Blueprint $table) {
+            $table->boolean('is_verified')->default(false)->after('status');
+        });
     }
 
-    public function down(): void
+    public function down()
     {
-        if (Schema::hasColumn('users', 'email_verified_at')) {
-            Schema::table('users', function (Blueprint $table) {
-                $table->dropColumn('email_verified_at');
-            });
-        }
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('is_verified');
+        });
     }
 };
