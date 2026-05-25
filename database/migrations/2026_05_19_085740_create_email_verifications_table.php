@@ -8,14 +8,16 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('email_verifications', function (Blueprint $table) {
-            $table->id();
-            $table->string('email')->index();
-            $table->string('otp');
-            $table->timestamp('expires_at');
-            $table->boolean('is_verified')->default(false);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('email_verifications')) {
+            Schema::create('email_verifications', function (Blueprint $table) {
+                $table->id();
+                $table->string('email')->index();
+                $table->string('otp');
+                $table->timestamp('expires_at');
+                $table->boolean('is_verified')->default(false);
+                $table->timestamps();
+            });
+        }
     }
 
     public function down()
