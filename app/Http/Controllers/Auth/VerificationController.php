@@ -54,11 +54,10 @@ class VerificationController extends Controller
 
         // Update user
         $user = User::where('email', $request->email)->first();
-        $user->update([
-            'is_verified' => true,
-            'email_verified_at' => now(),
-            'status' => 'active'
-        ]);
+        $user->is_verified = 1;
+        $user->email_verified_at = now();
+        $user->status = 'active';
+        $user->save();
 
         // Clear session
         session()->forget('verification_email');
