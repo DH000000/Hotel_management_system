@@ -165,3 +165,7 @@ Route::middleware('guest')->group(function () {
     Route::get('/update-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'showUpdatePasswordForm'])->name('password.update.form');
     Route::post('/update-password', [App\Http\Controllers\Auth\ResetPasswordController::class, 'updatePassword'])->name('password.update');
 });
+
+// Demo Request Routes
+Route::get('/request-demo', [App\Http\Controllers\DemoRequestController::class, 'index'])->name('demo-request');
+Route::post('/request-demo', [App\Http\Controllers\DemoRequestController::class, 'submit'])->name('demo-request.submit');

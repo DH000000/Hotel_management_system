@@ -57,7 +57,7 @@
                     <li><a href="{{ url('/pricing') }}" class="text-gray-400 hover:text-[#E69500] transition-all duration-300 hover:translate-x-1 inline-block">Pricing</a></li>
                     <li><a href="{{ url('/how-it-works') }}" class="text-gray-400 hover:text-[#E69500] transition-all duration-300 hover:translate-x-1 inline-block">How It Works</a></li>
                     <li><a href="{{ url('/modules') }}" class="text-gray-400 hover:text-[#E69500] transition-all duration-300 hover:translate-x-1 inline-block">All Modules</a></li>
-                    <li><a href="{{ url('/demo') }}" class="text-gray-400 hover:text-[#E69500] transition-all duration-300 hover:translate-x-1 inline-block">Request Demo</a></li>
+                    <li><a href="{{ url('/request-demo') }}" class="text-gray-400 hover:text-[#E69500] transition-all duration-300 hover:translate-x-1 inline-block">Request Demo</a></li>
                     <li><a href="{{ url('/api-docs') }}" class="text-gray-400 hover:text-[#E69500] transition-all duration-300 hover:translate-x-1 inline-block">API Docs</a></li>
                 </ul>
             </div>
